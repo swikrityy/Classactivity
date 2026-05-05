@@ -8,4 +8,5 @@ Route::get('/', function () {
 
 Route::get('/about',[FrontendController::class, 'about']);
 Route::get('/home',[FrontendController::class, 'home']);
-Route::get('/blog',[FrontendController::class, 'blog']);
+Route::get('/blog',[FrontendController::class, 'blog']); 
+Route::get('/contactus',[FrontendController::class, 'contactus']); 
