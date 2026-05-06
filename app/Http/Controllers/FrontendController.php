@@ -22,5 +22,9 @@ class FrontendController extends Controller
     return view('contactus');
    }
 
+   public function submit(){
+      
+   }
+
    
 }

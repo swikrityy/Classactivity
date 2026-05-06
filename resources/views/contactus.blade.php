@@ -41,9 +41,8 @@
       background: #245c97;
     }
   </style>
-
-
-  <form class="contact-form">
+  
+   <form class="contact-form">
     <h2>Contact Us</h2>
     
     <input type="text" name="name" placeholder="Your Name" required>
@@ -55,4 +54,5 @@
     <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
     
     <button type="submit">Send Message</button>
-  </form>
+
+   </form>
