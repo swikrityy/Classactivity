@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\contact;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -22,8 +23,11 @@ class FrontendController extends Controller
     return view('contactus');
    }
 
-   public function submit(){
-      
+   public function submit(request $request){
+    contact::create($request->all());
+
+    return view('sucess');
+
    }
 
    

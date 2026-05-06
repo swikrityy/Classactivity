@@ -41,8 +41,10 @@
       background: #245c97;
     }
   </style>
-  
-   <form class="contact-form">
+
+   <form class="contact-form" method="post" action="/submit">
+    @csrf
+    
     <h2>Contact Us</h2>
     
     <input type="text" name="name" placeholder="Your Name" required>
