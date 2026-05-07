@@ -59,15 +59,16 @@
     <tbody>
         @foreach ( $datas as $data )
         
-        @endforeach
       <tr>
-        <td>{{ $data ->Full_name }}</td>
-        <td>{{ $data ->Phone }}</td>
-        <td>{{ $data ->Email }} </td>
-        <td>{{ $data ->College }}</td>
-       <td>{{ $data ->Course }}</td>
-        <td>{{ $data ->Semester }}</td>
+        <td>{{ $data->full_name }}</td>
+        <td>{{ $data->phone }}</td>
+        <td>{{ $data->email }} </td>
+        <td>{{ $data->college }}</td>
+       <td>{{ $data->course }}</td>
+        <td>{{ $data->semester }}</td>
       </tr>
+       
+        @endforeach
     </tbody>
 
   </table>

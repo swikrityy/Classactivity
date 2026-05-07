@@ -35,8 +35,8 @@ class FrontendController extends Controller
 
    public function table(){
     $datas = Register::get();
-    dd($datas);
-    return view('table',compact('data'));
+    // dd($datas);
+    return view('table',compact('datas'));
    }
 
    public function submit(request $request){
