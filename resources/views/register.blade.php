@@ -50,6 +50,9 @@
             color: green;
             margin-bottom: 15px;
         }
+        .error{
+            color: red;
+        }
     </style>
 </head>
 <body>
@@ -57,26 +60,42 @@
 <div class="container">
     <h2>Student Registration</h2>
 
-    <?php if($message != "") { ?>
-        <div class="message"><?php echo $message; ?></div>
-    <?php } ?>
+   
 
-    <form method="POST" action="">
-        
+    <form method="POST" action="/register">
+        @csrf
         <label>Full Name</label>
-        <input type="text" name="full_name" required>
+        <input type="text" name="full_name" >
+        @error('full_name')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+    <br>
 
         <label>Phone</label>
-        <input type="text" name="phone" required>
-
+        <input type="text" name="phone" >
+        @error('phone')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+<br>
         <label>Email</label>
-        <input type="email" name="email" required>
+        <input type="email" name="email" >
+        @error('email')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+<br>
 
         <label>College</label>
-        <input type="text" name="college" required>
+        <input type="text" name="college" >
+        @error('college')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+<br>
 
         <label>Course</label>
-        <select name="course" required>
+        @error('course')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+        <select name="course" >
             <option value="">Select Course</option>
             <option>BCA</option>
             <option>BSc CSIT</option>
@@ -86,7 +105,10 @@
         </select>
 
         <label>Semester</label>
-        <select name="semester" required>
+        @error('semester')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+        <select name="semester" >
             <option value="">Select Semester</option>
             <option>1st Semester</option>
             <option>2nd Semester</option>

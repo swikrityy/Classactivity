@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proper HTML Table</title>
+
+  <style>
+    table {
+      width: 80%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      font-family: Arial, sans-serif;
+    }
+
+    th, td {
+      border: 1px solid #333;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    caption {
+      font-size: 24px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table>
+    <caption>Student Information</caption>
+
+    <thead>
+      <tr>
+        <th>Full_name</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>College</th>
+        <th>Course</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        @foreach ( $datas as $data )
+        
+        @endforeach
+      <tr>
+        <td>{{ $data ->Full_name }}</td>
+        <td>{{ $data ->Phone }}</td>
+        <td>{{ $data ->Email }} </td>
+        <td>{{ $data ->College }}</td>
+       <td>{{ $data ->Course }}</td>
+        <td>{{ $data ->Semester }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</body>
+</html>

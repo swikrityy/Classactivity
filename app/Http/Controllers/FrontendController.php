@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\contact;
 use App\Models\game;
+use App\Models\Register;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
@@ -32,6 +33,12 @@ class FrontendController extends Controller
     return view('register');
    }
 
+   public function table(){
+    $datas = Register::get();
+    dd($datas);
+    return view('table',compact('data'));
+   }
+
    public function submit(request $request){
     $request->validate([
         'name'=>'required|min:8',
@@ -46,10 +53,19 @@ class FrontendController extends Controller
    public function swikrity(request $request){
     game::create($request->all());
     return view('sucess');
-
-    public function 
-
+   }
 
    
-}
+
+
+    public function reg(request $request){
+        $request->validate([
+        'full_name'=>'required|min:8',
+        'email'=>'required|email',
+        'phone'=>'required|min:10|max:20',
+        'college'=>'nullable|min:1'
+    ]);
+        Register::create($request->all());
+        return view('sucess');
+    }
 }
