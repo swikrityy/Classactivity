@@ -40,21 +40,39 @@
     .contact-form button:hover {
       background: #245c97;
     }
+    .error{
+      color: red;
+      
+  
+    }
   </style>
 
    <form class="contact-form" method="post" action="/submit">
     @csrf
-    
+
     <h2>Contact Us</h2>
     
-    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="text" name="name" placeholder="Your Name">
+    @error('name')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+   
     
-    <input type="email" name="email" placeholder="Your Email" required>
-    
+    <input type="email" name="email" placeholder="Your Email" >
+    @error('email')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+
     <input type="text" name="subject" placeholder="Subject">
-    
-    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-    
+    @error('subject')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+
+    <textarea name="message" rows="5" placeholder="Your Message" ></textarea>
+    @error('message')
+     <Span class="error">{{$message}}</Span>
+    @enderror
+
     <button type="submit">Send Message</button>
 
    </form>

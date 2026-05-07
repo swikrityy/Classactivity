@@ -10,4 +10,7 @@ Route::get('/about',[FrontendController::class, 'about']);
 Route::get('/home',[FrontendController::class, 'home']);
 Route::get('/blog',[FrontendController::class, 'blog']); 
 Route::get('/contactus',[FrontendController::class, 'contactus']); 
+Route::get('/game',[FrontendController::class, 'game']); 
+
+Route::post('/swikrity',[FrontendController::class, 'swikrity']); 
 Route::post('/submit',[FrontendController::class, 'submit']); 
