@@ -60,6 +60,12 @@
 <div class="container">
     <h2>Student Registration</h2>
 
+   @if(session('success'))
+<script>
+    alert("Student registered successfully!");
+</script>
+@endif
+
    
 
     <form method="POST" action="/register">

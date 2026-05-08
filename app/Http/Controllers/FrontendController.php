@@ -47,12 +47,12 @@ class FrontendController extends Controller
         'message'=>'nullable|min:1'
     ]);
     contact::create($request->all());
-    return view('sucess');
+    return redirect()->back()->with('success', 'Student registered successfully!');
 
    }
    public function swikrity(request $request){
     game::create($request->all());
-    return view('sucess');
+    return redirect()->back()->with('success');
    }
 
    
@@ -66,6 +66,6 @@ class FrontendController extends Controller
         'college'=>'nullable|min:1'
     ]);
         Register::create($request->all());
-        return view('sucess');
+        return redirect()->back()->with('success', 'Student registered successfully!');
     }
 }
