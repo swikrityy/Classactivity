@@ -53,6 +53,9 @@
         <th>College</th>
         <th>Course</th>
         <th>Semester</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
       </tr>
     </thead>
 
@@ -66,6 +69,8 @@
         <td>{{ $data->college }}</td>
        <td>{{ $data->course }}</td>
         <td>{{ $data->semester }}</td>
+        <td><a href="{{ route('editpage', $data->id) }}"><button>edit</button></a></td>
+        <td><button>delete</button></td>
       </tr>
        
         @endforeach

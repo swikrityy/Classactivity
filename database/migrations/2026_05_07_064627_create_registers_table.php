@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
-            $table->string('full_name');
-            $table->string('email');
-            $table->string('college');
-            $table->string('course');
-            $table->string('phone');
-            $table->string('semester');
+            $table->string('full_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('college')->nullable();
+            $table->string('course')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('semester')->nullable();
             $table->timestamps();
         });
     }

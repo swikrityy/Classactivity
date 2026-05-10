@@ -20,3 +20,6 @@ Route::post('/register',[FrontendController::class, 'reg']);
 Route::get('/register',[FrontendController::class, 'register']); 
 
 Route::get('/table',[FrontendController::class, 'table']); 
+Route::get('/edit/{id}',[FrontendController::class, 'edit'])->name('editpage'); 
+
+Route::post('/update/{contact}',[FrontendController::class,'update'])->name('update');

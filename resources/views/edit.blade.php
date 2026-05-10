@@ -66,30 +66,30 @@
        </script>
    @endif
 
-    <form method="POST" action="/register">
+<form method="POST" action="{{ route('update', $userdata) }}"> 
         @csrf
         <label>Full Name</label>
-        <input type="text" name="full_name" value={{ old("full_name") }} >
-        @error('full_name')
+        <input type="text" name="full_name" value="{{ $userdata->full_name }}" >
+        @error('full_name') 
      <Span class="error">{{$message}}</Span>
     @enderror
     <br>
 
         <label>Phone</label>
-        <input type="text" name="phone" value={{ old("phone") }}  >
+        <input type="text" name="phone" value="{{ $userdata->phone }}"  >
         @error('phone')
      <Span class="error">{{$message}}</Span>
     @enderror
 <br>
         <label>Email</label>
-        <input type="email" name="email" value={{ old("email") }} >
+        <input type="email" name="email" value="{{ $userdata->email }}"  >
         @error('email')
      <Span class="error">{{$message}}</Span>
     @enderror
 <br>
 
         <label>College</label>
-        <input type="text" name="college" value={{ old("college") }}>
+        <input type="text" name="college" value="{{ $userdata->phone}}" >
         @error('college')
      <Span class="error">{{$message}}</Span>
     @enderror
@@ -101,7 +101,7 @@
     @enderror
         <select name="course" >
             <option value="">Select Course</option>
-            <option>BCA</option>
+            <option value="bca">BCA</option>
             <option>BSc CSIT</option>
             <option>BBS</option>
             <option>BIM</option>
@@ -114,7 +114,7 @@
     @enderror
         <select name="semester" >
             <option value="">Select Semester</option>
-            <option>1st Semester</option>
+            <option value="1st">1st Semester</option>
             <option>2nd Semester</option>
             <option>3rd Semester</option>
             <option>4th Semester</option>

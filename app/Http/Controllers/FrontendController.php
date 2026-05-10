@@ -68,4 +68,14 @@ class FrontendController extends Controller
         Register::create($request->all());
         return redirect()->back()->with('success', 'Student registered successfully!');
     }
+    public function edit(string $id){
+        $userdata = Register::find($id);
+        return view ('edit', compact('userdata'));
+    }
+
+    public function update (Request $request, Register $register){
+        $register->update($request->all());
+        return redirect()->to('/table');
+        
+    }
 }
