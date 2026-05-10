@@ -66,7 +66,7 @@
        </script>
    @endif
 
-<form method="POST" action="{{ route('update', $userdata) }}"> 
+<form method="POST" action="{{ route('update', $userdata->id) }}"> 
         @csrf
         <label>Full Name</label>
         <input type="text" name="full_name" value="{{ $userdata->full_name }}" >
@@ -89,7 +89,7 @@
 <br>
 
         <label>College</label>
-        <input type="text" name="college" value="{{ $userdata->phone}}" >
+        <input type="text" name="college" value="{{ $userdata->college}}" >
         @error('college')
      <Span class="error">{{$message}}</Span>
     @enderror
