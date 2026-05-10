@@ -70,7 +70,7 @@
        <td>{{ $data->course }}</td>
         <td>{{ $data->semester }}</td>
         <td><a href="{{ route('editpage', $data->id) }}"><button>edit</button></a></td>
-        <td> <form method="post" action=""><button type="submit">delete</button></form></td>
+        <td> <form method="post" action="{{ route('delete',$data) }}"><button type="submit">delete</button></form></td>
       </tr>
        
         @endforeach

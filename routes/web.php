@@ -23,3 +23,5 @@ Route::get('/table',[FrontendController::class, 'table'])->name('table');
 Route::get('/edit/{id}',[FrontendController::class, 'edit'])->name('editpage'); 
 
 Route::post('/update/{register}',[FrontendController::class,'update'])->name('update');
+
+Route::post('/delete/{register}',[FrontendController::class,'delete'])->name('delete');
