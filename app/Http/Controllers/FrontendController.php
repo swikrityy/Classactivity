@@ -78,4 +78,10 @@ class FrontendController extends Controller
         return redirect()->to('/table');
         
     }
+    public function delete(Register $register){
+        $register ->delete();
+
+        return redirect()->route('table');
+
+    }
 }
